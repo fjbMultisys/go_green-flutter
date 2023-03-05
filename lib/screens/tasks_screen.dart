@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/widgets/task_list.dart';
+import 'package:todoey_flutter/widgets/tast_tile.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
     return Scaffold(
       backgroundColor: Colors.lime,
       floatingActionButton: FloatingActionButton(
@@ -51,7 +54,7 @@ class TasksScreen extends StatelessWidget {
           SizedBox(height: 10.0),
           Expanded(child:
           Container(
-            height: 300.0,
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -59,6 +62,7 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                 )
             ),
+            child: TaskList(),
           ),
           ),
         ],
